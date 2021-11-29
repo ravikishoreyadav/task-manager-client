@@ -13,9 +13,13 @@
 }
 
 .task{
-    width: 18rem;
+    width: 15rem;
     height: 14rem;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;    
+}
+
+.border{
+    overflow-x: scroll;
 }

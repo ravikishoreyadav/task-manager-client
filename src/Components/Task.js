@@ -3,7 +3,6 @@ import { Card, Button } from 'react-bootstrap';
 
 function Task(){
     return(
-
         <Card className="task">            
             <Card.Body>
                 <Card.Title>Card Title</Card.Title>

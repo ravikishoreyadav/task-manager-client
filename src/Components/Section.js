@@ -8,8 +8,7 @@ function Section(){
             <Card.Body className="section" >                           
                 <Task />
                 <Task />
-                <Task />
-                <Task />
+                <Task />                
             </Card.Body>
         </Card>
     );
