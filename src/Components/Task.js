@@ -1,5 +1,9 @@
 import { Card, Button } from 'react-bootstrap';
 
+import { useSelector, useDispatch} from 'react-redux';
+
+import {addtask, deletetask } from '../features/task/taskSlice';
+
 
 function Task(){
     return(
