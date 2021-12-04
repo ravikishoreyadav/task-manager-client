@@ -1,20 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { Card } from 'react-bootstrap';
 
 export const taskSlice = createSlice({
   name: 'task',
   initialState: {
-    value: 0,
+    value: '',
   },
   reducers: {
     addtask: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.value += 1
+      
+      state.value = 'This is added text'
     },
     deletetask: (state) => {
-      state.value -= 1
+      state.value = ''
     },       
   },
 })
