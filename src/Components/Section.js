@@ -8,13 +8,12 @@ function Section(){
     const taskVal = useSelector((state) => state.task.value)
     const dispatch = useDispatch()
 
+
     return(
 
         <Card style={{ width: '20rem' }}>
             <Card.Header>Featured</Card.Header>
             <Card.Body className="section" >                           
-                <Task />
-                <Task />
                 <Task />
                 {taskVal}
                 <Button

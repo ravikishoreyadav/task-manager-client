@@ -1,15 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { Card } from 'react-bootstrap';
 
+
 export const taskSlice = createSlice({
   name: 'task',
   initialState: {
     value: '',
   },
   reducers: {
-    addtask: (state) => {
-      
-      state.value = 'This is added text'
+    addtask: (state, action) => {      
+      state.value = action.payload
     },
     deletetask: (state) => {
       state.value = ''

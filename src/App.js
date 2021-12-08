@@ -1,4 +1,3 @@
-import './App.css';
 import { Container, Row, Col, Navbar } from 'react-bootstrap';
 import Topbar from './includes/Topbar';
 import Sidebar from './includes/Sidebar';
@@ -36,8 +35,7 @@ function App() {
               </Col>
               <Col className="section-container">
                 <Section />                 
-              </Col> 
-                           
+              </Col>         
             </Row>
           </Col>
         </Row>
