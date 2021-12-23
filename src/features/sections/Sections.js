@@ -1,5 +1,5 @@
 import { Card, Button } from 'react-bootstrap';
-import Task from './Task';
+import Tasks from '../tasks/Tasks';
 import { useSelector, useDispatch} from 'react-redux';
 import {addtask, deletetask } from '../features/tasks/taskSlice';
 
@@ -14,12 +14,12 @@ function Section(){
         <Card style={{ width: '20rem' }}>
             <Card.Header>Featured</Card.Header>
             <Card.Body className="section" >                           
-                <Task />
+                <Tasks />
                 {taskVal}
                 <Button
                     onClick={() => dispatch(addtask())}  
-                > 
-                    Add Task 
+                >
+                   Add Task 
                 </Button>
                 <Button
                     onClick={() => dispatch(deletetask())}  
