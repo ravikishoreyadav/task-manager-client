@@ -1,12 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { Card } from 'react-bootstrap';
-
+import { createSlice } from '@reduxjs/toolkit';
 
 export const taskSlice = createSlice({
   name: 'task',
-  initialState: {
-    value: '',
-  },
+  initialState: 'Hello',
   reducers: {
     addtask: (state, action) => {      
       state.value = action.payload

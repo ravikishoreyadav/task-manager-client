@@ -1,35 +1,20 @@
-import { Card, Button } from 'react-bootstrap';
-import Tasks from '../tasks/Tasks';
+import { Card } from 'react-bootstrap';
 import { useSelector, useDispatch} from 'react-redux';
-import {addtask, deletetask } from '../features/tasks/taskSlice';
+import {addSection, deleteSection} from './sectionSlice';
+function Sections(){
 
-function Section(){
-
-    const taskVal = useSelector((state) => state.task.value)
+    const sections = useSelector((state) => state.section)
+    console.log(sections);
     const dispatch = useDispatch()
 
 
     return(
-
         <Card style={{ width: '20rem' }}>
             <Card.Header>Featured</Card.Header>
-            <Card.Body className="section" >                           
-                <Tasks />
-                {taskVal}
-                <Button
-                    onClick={() => dispatch(addtask())}  
-                >
-                   Add Task 
-                </Button>
-                <Button
-                    onClick={() => dispatch(deletetask())}  
-                > 
-                    Remove 
-                </Button>                
+            <Card.Body className="section">                               
             </Card.Body>
         </Card>
-
     );
 }
 
-export default Section;
+export default Sections;

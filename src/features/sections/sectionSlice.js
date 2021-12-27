@@ -1,8 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { Card } from 'react-bootstrap';
+import { createSlice } from '@reduxjs/toolkit';
 
 export const sectionSlice = createSlice({
-  name: 'task',
+  name: 'section',
   initialState: [
         { name: 'To DO' },
         { name: 'In Progress' },
@@ -18,6 +17,6 @@ export const sectionSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { addtask, deletetask } = sectionSlice.actions;
+export const { addSection, deleteSection } = sectionSlice.actions;
 
 export default sectionSlice.reducer

@@ -1,7 +1,7 @@
-import { Container, Row, Col, Navbar } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import Topbar from './includes/Topbar';
 import Sidebar from './includes/Sidebar';
-import Section from './Components/Section';
+import Sections from './features/sections/Sections';
 
 function App() {
   return (
@@ -28,13 +28,13 @@ function App() {
             </Row>            
             <Row className="border">
               <Col className="section-container">
-                <Section />                 
+                <Sections />                 
               </Col>
               <Col className="section-container">
-                <Section />                 
+                <Sections />                 
               </Col>
               <Col className="section-container">
-                <Section />                 
+                <Sections />                 
               </Col>         
             </Row>
           </Col>
