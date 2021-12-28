@@ -27,15 +27,7 @@ function App() {
               </Col>
             </Row>            
             <Row className="border">
-              <Col className="section-container">
-                <Sections />                 
-              </Col>
-              <Col className="section-container">
-                <Sections />                 
-              </Col>
-              <Col className="section-container">
-                <Sections />                 
-              </Col>         
+              <Sections />                
             </Row>
           </Col>
         </Row>
