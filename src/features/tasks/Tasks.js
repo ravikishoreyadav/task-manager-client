@@ -1,20 +1,27 @@
 import { Card, Button } from 'react-bootstrap';
 import { useSelector, useDispatch} from 'react-redux';
-
-import TaskAdd from './TaskAdd';
+import taskSlice from './taskSlice';
 
 function Task(){
+
+    const tasks = useSelector((state) => state.tasks)
     
     return(
-        <Card className="task">            
-            <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content .
-                </Card.Text>                
-            </Card.Body>
-        </Card>
+        <>
+            { 
+                tasks.map(task => (
+                    <Card className="task" key={task.id}>            
+                        <Card.Body>
+                            <Card.Title>{task.title}</Card.Title>
+                            <Card.Text>
+                                {task.content}
+                            </Card.Text>                
+                        </Card.Body>
+                    </Card>
+                ))
+            
+            }
+        </>
     );
 }
 

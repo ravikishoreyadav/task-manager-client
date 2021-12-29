@@ -2,6 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Topbar from './includes/Topbar';
 import Sidebar from './includes/Sidebar';
 import Sections from './features/sections/Sections';
+import './App.css';
 
 function App() {
   return (
