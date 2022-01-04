@@ -3,21 +3,26 @@ import { useSelector, useDispatch} from 'react-redux';
 import {addSection, deleteSection} from './sectionSlice';
 //import Task from '../tasks/Tasks';
 import taskSlice from '../tasks/taskSlice';
-import { taskMoved } from '../tasks/taskSlice';
+//import { taskMoved } from '../tasks/taskSlice';
+import { useState } from 'react';
+import TaskAddForm from '../tasks/TaskAddForm';
 
 function Sections(){
 
     const sections = useSelector((state) => state.sections)
     const tasks = useSelector((state) => state.tasks)
 
+    const [title, setTitle] = useState('')
+    const [content, setContent] = useState('')
+
     const dispatch = useDispatch()
 
-    const onTaskMoved = () => {
-        if (title && content){
-          dispatch(postUpdated({ id: postId, title, content }))
-          //history.push(`/posts/${postId}`)
-        }
-    }
+    // const onTaskMoved = () => {
+    //     if (title && content){
+    //       dispatch(taskMoved({ id: postId, title, content }))
+    //       //history.push(`/posts/${postId}`)
+    //     }
+    // }
 
     return(
         <>
@@ -41,13 +46,15 @@ function Sections(){
                                     <Card.Footer>
                                         <ButtonGroup>
                                             <DropdownButton as={ButtonGroup} title="Move to" id="bg-nested-dropdown" size="sm">
-                                                <Dropdown.Item eventKey="1" onClick={onTaskMoved}>To Do</Dropdown.Item>
+                                                <Dropdown.Item eventKey="1">To Do</Dropdown.Item>
                                                 <Dropdown.Item eventKey="2">In Progress</Dropdown.Item>
                                             </DropdownButton>
                                         </ButtonGroup>
                                     </Card.Footer>                                    
                                 </Card> 
                             ))}
+
+                                <TaskAddForm section_id={section.id}/>
 
                             </Card.Body>                            
                         </Card>
