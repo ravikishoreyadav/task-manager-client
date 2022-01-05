@@ -1,8 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
+import { taskAdded } from "./taskSlice";
+import { useDispatch } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
 
 
 const TaskAddForm = (props) => {
+
+    const [title, setTitle] = useState('')
+    const [content, setContent] = useState('')
+
+    const onTitleChanged = e => setTitle(e.target.value)
+    const onContentChanged = e => setContent(e.target.value)
+
+    const dispatch = useDispatch();
+
+    const onTaskAddClicked  = () => {
+        if(title & content){
+            alert('hello')
+            dispatch(taskAdded({
+                    id: 3,
+                    section_id: 1,
+                    title,
+                    content
+
+                })
+            )
+
+            setTitle('')
+            setContent('')
+        }
+    }
+
 
 
     return (
@@ -11,14 +40,21 @@ const TaskAddForm = (props) => {
                 <Form>
                     <Card.Title>Task Add</Card.Title>
                     <Card.Text>
-                        <Form.Control type="text" placeholder="Enter the title" />
+                        <Form.Control 
+                        type="text" 
+                        value={title}
+                        onChange={onTitleChanged} 
+                        placeholder="Enter the title" 
+                        />
                         <Form.Control
                         as="textarea"
-                        placeholder="Enter the task description"
-                        style={{ height: '100px' }}
+                        value={content}
+                        onChange={onContentChanged}
+                        placeholder="Task description"
+                        style={{ height: '70px' }}
                         />                    
                     </Card.Text>
-                    <Button type="submit">Add</Button>
+                    <Button type="button" onClick={onTaskAddClicked}>Add</Button>
                 </Form>                                
             </Card.Body>
         </Card>
