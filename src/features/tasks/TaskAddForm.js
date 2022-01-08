@@ -17,13 +17,12 @@ const TaskAddForm = (props) => {
 
     const onTaskAddClicked  = () => {
         if(title & content){
-            alert('hello')
+            
             dispatch(taskAdded({
                     id: 3,
                     section_id: 1,
                     title,
                     content
-
                 })
             )
 
